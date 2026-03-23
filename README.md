@@ -68,3 +68,31 @@ index=windowslogs EventID=4625
 This behaviour is consistent with a brute force attack and should be investigated further or blocked.
 
 ---
+## Lab 3: Suspicious Successful Login Investigation
+
+### Objective
+Investigate successful login activity to identify potential unauthorized access.
+
+### Tools Used
+- Splunk  
+- Windows Event Logs  
+
+### Steps Taken
+- Searched for successful login events (Event ID 4624)  
+- Analysed login times and source IP addresses  
+- Looked for unusual login patterns  
+
+### SPL Query
+'''
+index=windowslogs EventID=4624
+| stats count by AccountName, SourceIp
+'''
+
+### Findings
+- Detected successful logins from unusual sources  
+- Identified login activity outside normal patterns  
+
+### Conclusion
+This behaviour may indicate compromised credentials and should be investigated further.
+
+---
