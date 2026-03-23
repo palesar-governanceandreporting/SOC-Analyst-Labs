@@ -24,10 +24,8 @@ Investigate suspicious process activity using Windows event logs.
 - Analysed parent and child processes  
 - Reviewed command-line activity  
 
-### SPL Query
-index=windowslogs EventID=1
+### SPL Queryindex=windowslogs EventID=1
 | table _time ParentProcessId ProcessId CommandLine
-
 ### Findings
 - Identified suspicious process execution  
 - Observed unusual command-line activity  
@@ -52,10 +50,8 @@ Detect multiple failed login attempts that could indicate a brute force attack.
 - Grouped events by AccountName and Source IP  
 - Analysed repeated login failures  
 
-### SPL Query
-index=windowslogs EventID=4625
+### SPL Queryindex=windowslogs EventID=4625
 | stats count by AccountName, SourceIp
-
 ### Findings
 - Multiple failed login attempts detected from the same source IP  
 - Repeated attempts targeting specific user accounts  
