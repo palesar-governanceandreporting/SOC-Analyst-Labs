@@ -87,6 +87,7 @@ Investigate successful login activity to identify potential unauthorized access.
 index=windowslogs EventID=4624
 | stats count by AccountName, SourceIp
 ```
+
 ### Findings
 - Detected successful logins from unusual sources  
 - Identified login activity outside normal patterns  
